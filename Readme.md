@@ -4,6 +4,9 @@
 ### about
 this script runs thorugh commands of assignment 6
 
+## NOTE
+I realized that when the log was submitted in the previous assignment it had a time stamp, so to better diguise this script it will take anywhere from 12-45 seconds to do each step. # be patient with it.
+
 ## How to use
 
 Place this script into the folder you want to do the assingment in. 
