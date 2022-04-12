@@ -1,22 +1,37 @@
 import os
 from git import Git, Repo
 
+import time
+import random
 
+
+
+#create random number between 5-12 seconds
+def random_time():
+    return random.randint(5,12)
+    
+
+time.sleep(5)
 #this project uses git flow
 
 # 2. Make  a repo in this directory
 repo = Repo.init(".")
 
-# have git ignore "snap1.txt"
-s1 = open("s1.txt", "w")
+#create a file called s1.txt
+s1 = open("s1.txt", "a")
+
+
 
 # 3. Checkout the master branch (not really needed, but a good idea anyway)
 repo.git.checkout("master")
 # 4. Use touch to create a file called s1
 # create a file called s1.txt in write mode
 
-# 5. Edit s1 and add the letter "A" to it]
-s1.write("A")
+# 5.  s1 and add the letter "A" 
+with open("s1.txt", "a") as s1:
+    s1.write("A")
+
+
 
 # 6. Commit this file and name the commit "C1"
 repo.index.add("s1.txt")
@@ -45,21 +60,24 @@ repo.git.checkout("feature/1")
 repo.git.merge("master")
 
 # 13. Edit s1 and add the letter "B" to it.
-s1.write("B")
+with open("s1.txt", "a") as s1:
+    s1.write("B")
 
 # 14. Commit this file and name the commit "C2"
 repo.index.add("s1.txt")
 repo.index.commit("C2")
 
 # 15. Edit s1 and add the letter "C" to it.
-s1.write("C")
+with open("s1.txt", "a") as s1:
+    s1.write("C")
 
 # 16. Commit this file and name the commit "C3"
 repo.index.add("s1.txt")
 repo.index.commit("C3")
 
 # 17. Edit s1 and add the letter "D" to it.
-s1.write("D")
+with open("s1.txt", "a") as s1:
+    s1.write("D")
 
 # 18. Commit this file and name the commit "C4"
 repo.index.add("s1.txt")
@@ -77,14 +95,16 @@ repo.git.checkout("feature/2")
 repo.git.merge("master")
 
 # 22. Edit s1 and add the letter "F" to it.
-s1.write("F")
+with open("s1.txt", "a") as s1:
+    s1.write("F")
 
 # 23. Commit this file and name the commit "C6"
 repo.index.add("s1.txt")
 repo.index.commit("C6")
 
 # 24. Edit s1 and add the letter "G" to it.
-s1.write("G")
+with open("s1.txt", "a") as s1:
+    s1.write("G")
 
 # 25. Commit this file and name the commit "C7"
 repo.index.add("s1.txt")
@@ -97,21 +117,24 @@ repo.git.checkout("feature/3")
 repo.git.merge("master")
 
 # 28. Edit s1 and add the letter "G" to it.
-s1.write("H")
+with open("s1.txt", "a") as s1:
+    s1.write("H")
 
 # 29. Commit this file and name the commit "C8"
 repo.index.add("s1.txt")
 repo.index.commit("C8")
 
 # 30. Edit s1 and add the letter "I" to it.
-s1.write("I")
+with open("s1.txt", "a") as s1:
+    s1.write("I")
 
 # 31. Commit this file and name the commit "C9"
 repo.index.add("s1.txt")
 repo.index.commit( "C9")
 
 # 32. Edit s1 and add the letter "J" to it.
-s1.write("J")
+with open("s1.txt", "a") as s1:
+    s1.write("J")
 
 # 33. Commit this file and name the commit "C10"
 repo.index.add("s1.txt")
@@ -132,7 +155,8 @@ repo.git.merge("feature/1")
 repo.git.checkout("feature/1")
 
 # 39. Edit s1 and add the letter "E" to it.
-s1.write("E")
+with open("s1.txt", "a") as s1:
+    s1.write("E")
 
 # 40. Commit this file and name the commit "C5"
 repo.index.add("s1.txt")
@@ -242,3 +266,12 @@ with open('HW#6.txt', 'w') as outfile:
         # Add '\n' to enter data of file2
         # from next line
         outfile.write("\n")
+
+
+# create a new directory called Logs
+os.mkdir("Logs")
+
+#move files from the current directory to the Logs directory
+os.system("mv snap*.txt Logs")
+#move logSnap.txt to the Logs directory
+os.system("mv logSnap.txt Logs")
