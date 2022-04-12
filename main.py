@@ -159,7 +159,8 @@ os.system("git log --all --decorate --oneline --graph > snap3.txt")
 
 # 47. Testing of the features has now been completed on the develop branch. Feature 1 and Feature three have been determined to be ready for production – feature 2 is not yet ready.
 # 48. Checkout the Release branch
-repo.git.checkout("release")
+os.system("git flow release start 1")
+repo.git.checkout("release/1")
 
 # 49. Merge Master into Release
 repo.git.merge("master")
@@ -173,7 +174,7 @@ repo.git.merge("feature/1")
 repo.git.merge("feature/3")
 
 # 52. Merge Release into Master
-repo.git.merge("release")
+repo.git.merge("release/1")
 
 # 53. Tag it as "v2.0"
 repo.git.tag("v2.0")
@@ -184,7 +185,8 @@ os.system("git log --all --decorate --oneline --graph > snap4.txt")
 
 # 55. A problem with the master branch has been found.
 # 56. Checkout the Hot Fix branch
-repo.git.checkout("hotfix")
+os.system("git flow hotfix start 1")
+repo.git.checkout("hotfix/1")
 
 # 57. Merge master into Hot Fix
 repo.git.merge("master")
@@ -200,13 +202,13 @@ repo.index.commit("C11")
 repo.git.checkout("develop")
 
 # 61. Merge Hot Fix into Develop
-repo.git.merge("hotfix")
+repo.git.merge("hotfix/1")
 
 # 62. Checkout Master
 repo.git.checkout("master")
 
 # 63. Merge Hot Fix into Master
-repo.git.merge("hotfix")
+repo.git.merge("hotfix/1")
 
 # 64. Tag it as "v2.1"
 repo.git.tag("v2.1")
