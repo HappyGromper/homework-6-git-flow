@@ -4,6 +4,7 @@ import os
 hw = open("HW#6.txt", "w")
 
 #add s1.txt to the new txt file
+os.system("git log --all > logSnap.txt")
 
 filenames = ['snap1.txt', 'snap2.txt', 'snap3.txt', 'snap4.txt', 'snap5.txt', 's1.txt', 'logSnap.txt']
   
