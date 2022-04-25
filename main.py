@@ -5,7 +5,7 @@ from git import Git, Repo
 import time
 import random
 
-#create random number between 5-12 seconds
+#create random number between 7-14 seconds
 def random_time():
     print("Still Running Script ") 
     randInt = random.randint(7,14)
